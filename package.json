@@ -1,0 +1,14 @@
+{
+  "name": "parlament-na-zhivo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Гласуванията в Народното събрание по партии и депутати, обновявани автоматично от parliament.bg",
+  "scripts": {
+    "scrape": "node scraper/scrape.mjs",
+    "rebuild": "node scraper/scrape.mjs --rebuild-only",
+    "test": "node --test test/*.test.mjs",
+    "serve": "npx --yes serve site"
+  },
+  "engines": { "node": ">=20" }
+}
