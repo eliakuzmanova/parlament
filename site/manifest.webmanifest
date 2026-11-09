@@ -1,0 +1,12 @@
+{
+  "name": "Парламент на живо",
+  "short_name": "Парламент",
+  "description": "Как гласува всяка партия и всеки депутат в Народното събрание",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef0f3",
+  "theme_color": "#1f3f99",
+  "lang": "bg",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Парламент на живо</title>
+<meta name="description" content="Как гласува всяка партия и всеки депутат в Народното събрание">
+<meta name="theme-color" content="#1f3f99">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>
+  // Тема и размер на шрифта преди първото изрисуване, за да няма премигване.
+  try {
+    var s = JSON.parse(localStorage.getItem("pnz.settings") || "{}");
+    if (s.theme && s.theme !== "auto") document.documentElement.dataset.theme = s.theme;
+    if (s.font) document.documentElement.style.setProperty("--fs", s.font / 100);
+  } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Към съдържанието</a>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#/">Парламент на живо</a>
+    <nav class="nav" aria-label="Основна навигация">
+      <a href="#/" data-nav="feed">Поток</a>
+      <a href="#/topics" data-nav="topics">Теми</a>
+      <a href="#/parties" data-nav="parties">Партии</a>
+      <a href="#/mps" data-nav="mps">Депутати</a>
+      <a href="#/following" data-nav="following">Следвани</a>
+      <a href="#/settings" data-nav="settings" aria-label="Настройки">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <span class="nav-label-settings">Настройки</span>
+      </a>
+    </nav>
+  </div>
+</header>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<main id="main" class="main" tabindex="-1">
+  <p class="loading">Зареждане на гласуванията…</p>
+</main>
+<footer class="foot">
+  Данни: <a href="https://www.parliament.bg" rel="noopener" target="_blank">parliament.bg</a>, обработени автоматично.
+  Резултатите са изчислени от поименните данни – при спор е вярна стенограмата.
+</footer>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
